@@ -6,7 +6,6 @@ import tree_generator
 from sys import argv
 import platform
 
-system = platform.system().lower()
 clear = {"linux": "clear", "macos": "clear", "windows": "cls"}
 tree = tree_generator.main(int(input("What is the height of the tree: ")))
 colors = {1: "red", 2: "blue", 3: "yellow"}
@@ -27,7 +26,7 @@ while True:
 		elif i == "|":
 			print(i)
 			sleep(0.5)
-			system(clear[system])
+			system(clear[platform.system().lower()])
 		else:
 			print(i, end="")
 
