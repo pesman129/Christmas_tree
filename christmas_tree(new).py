@@ -5,7 +5,7 @@ from termcolor import colored
 import tree_generator
 from sys import argv, platform
 
-platform = platform()
+plat = platform()
 clear = {"linux": "clear", "macos": "clear", "windows": "cls"}
 tree = tree_generator.main(int(input("What is the height of the tree: ")))
 colors = {1: "red", 2: "blue", 3: "yellow"}
