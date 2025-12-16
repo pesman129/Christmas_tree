@@ -26,7 +26,7 @@ while True:
 		elif i == "|":
 			print(i)
 			sleep(0.5)
-			system(clear[platform()])
+			system(clear[f"{platform()}"])
 		else:
 			print(i, end="")
 
