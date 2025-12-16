@@ -5,8 +5,8 @@ from termcolor import colored
 import tree_generator
 from sys import argv, platform
 
+platform = platform()
 clear = {"linux": "clear", "macos": "clear", "windows": "cls"}
-
 tree = tree_generator.main(int(input("What is the height of the tree: ")))
 colors = {1: "red", 2: "blue", 3: "yellow"}
 leaf_color = "green"
@@ -26,7 +26,7 @@ while True:
 		elif i == "|":
 			print(i)
 			sleep(0.5)
-			system(clear[f"{platform()}"])
+			system(clear[platform])
 		else:
 			print(i, end="")
 
