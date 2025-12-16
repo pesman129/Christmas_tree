@@ -1,9 +1,11 @@
 from random import randint
-from os import system
+from os import system, platform
 from time import sleep
 from termcolor import colored
 import tree_generator
 from sys import argv
+
+clear = {"linux": "clear", "macos": "clear", "windows": "cls"}
 
 tree = tree_generator.main(int(input("What is the height of the tree: ")))
 colors = {1: "red", 2: "blue", 3: "yellow"}
@@ -24,7 +26,7 @@ while True:
 		elif i == "|":
 			print(i)
 			sleep(0.5)
-			system("clear")
+			system(clear[platform()])
 		else:
 			print(i, end="")
 
