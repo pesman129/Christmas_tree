@@ -1,9 +1,9 @@
 from random import randint
-from os import system, platform
+from os import system
 from time import sleep
 from termcolor import colored
 import tree_generator
-from sys import argv
+from sys import argv, platform
 
 clear = {"linux": "clear", "macos": "clear", "windows": "cls"}
 
