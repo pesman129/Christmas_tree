@@ -4,8 +4,9 @@ from time import sleep
 from termcolor import colored
 import tree_generator
 import platform
+from sys import stdout
 
-clear = {"linux": "clear", "macos": "clear", "windows": "cls"}
+term = stdout.isatty()
 tree = tree_generator.main(int(input("What is the height of the tree: ")))
 colors = {1: "red", 2: "blue", 3: "yellow"}
 
@@ -20,6 +21,9 @@ while True:
 		elif i == "|":
 			print(i)
 			sleep(0.5)
-			system(clear[platform.system().lower()])
+			if term == True:
+				print("\033[2J\033[H", end="")
+			else:
+				print("\n" * 100)
 		else:
 			print(i, end="")
